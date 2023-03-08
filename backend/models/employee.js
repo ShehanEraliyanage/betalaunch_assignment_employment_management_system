@@ -14,7 +14,7 @@ const employeeSchema = new Schema({
   eType: { type: String, required: true },
   joinDate: { type: String, required: true },
   experience: { type: String, required: true },
-  salary: { type: Number, required: true },
+  salary: { type: String },
   personalNotes: { type: String, required: true },
 });
 
