@@ -6,6 +6,8 @@ import * as dotenv from "dotenv";
 
 // Import routes
 
+import employeeRoutes from "./routes/employee.js";
+
 // Constants
 dotenv.config();
 const URL = process.env.MONGODB_URL;
@@ -26,6 +28,7 @@ connection.once("open", () => {
 });
 
 // Use routes
+app.use("/employee", employeeRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
