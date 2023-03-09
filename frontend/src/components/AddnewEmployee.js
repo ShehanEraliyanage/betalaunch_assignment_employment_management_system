@@ -23,8 +23,6 @@ export default function AddnewEmployee() {
   const [salary, setSalary] = useState("");
   const [personalNote, setPersonalNote] = useState("");
 
-  console.log(salary);
-
   function handleSubmit() {
     if (
       fullName === "" ||

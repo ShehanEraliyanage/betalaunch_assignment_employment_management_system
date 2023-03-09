@@ -11,8 +11,11 @@ export const addEmployee = async (details) => {
   return data;
 };
 
-export const getAllEmployees = async () => {
-  const { data } = await axios.get(baseURL + "/employee/getAllEmployees");
+export const getAllEmployees = async (currentPage, selectedType) => {
+  const { data } = await axios.get(
+    baseURL +
+      `/employee/getAllEmployees?page=${currentPage}&limit=5&selectedType=${selectedType}`
+  );
   return data;
 };
 

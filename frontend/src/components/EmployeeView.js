@@ -2,19 +2,22 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import Select from "react-select";
+import ReactPaginate from "react-paginate";
 
 //import Controller
 import { getAllEmployees, deleteEmployee } from "../controllers/employee";
 
 export default function EmployeeView() {
   const [employees, setEmployees] = useState([]);
-  const [selectedType, setSelectedType] = useState(null);
+  const [selectedType, setSelectedType] = useState("null");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(5);
 
   useEffect(() => {
-    getAllEmployees().then((res) => {
+    getAllEmployees(currentPage, selectedType).then((res) => {
       setEmployees(res);
     });
-  }, []);
+  }, [currentPage, selectedType]);
 
   const employeeTypes = [
     { value: "Full Time", label: "Full Time" },
@@ -24,12 +27,12 @@ export default function EmployeeView() {
   ];
 
   const handleTypeChange = (selectedOption) => {
-    setSelectedType(selectedOption);
+    setSelectedType(selectedOption.value);
   };
 
-  const filteredEmployees = selectedType
-    ? employees.filter((employee) => employee.eType === selectedType.value)
-    : employees;
+  const handlePageClick = async (data) => {
+    setCurrentPage(data.selected + 1);
+  };
 
   function deleteHandler(id) {
     Swal.fire({
@@ -117,7 +120,7 @@ export default function EmployeeView() {
                 </tr>
               </thead>
               <tbody>
-                {filteredEmployees.map((value, index) => {
+                {employees.map((value, index) => {
                   return (
                     <tr className="text-black border-2 " key={index}>
                       <td className=" py-4 font-bold ">{value.displayName}</td>
@@ -138,6 +141,17 @@ export default function EmployeeView() {
                 })}
               </tbody>
             </table>
+          </div>
+          <div>
+            {" "}
+            <ReactPaginate
+              className="flex flex-row p-3  gap-x-2"
+              breakLabel={"..."}
+              pageCount={totalPages}
+              onPageChange={handlePageClick}
+              nextLabel="next >"
+              previousLabel="< previous"
+            />
           </div>
         </div>
       </div>
