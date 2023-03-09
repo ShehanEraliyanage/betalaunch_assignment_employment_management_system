@@ -26,7 +26,13 @@ and
 cd backend
 ```
 
-Now Run command in each console(Both frontend and backend),
+Now Run command in each console(Both frontend and backend) to get all related node modules,
+
+```
+npm i
+```
+
+Now Run command in each console(Both frontend and backend)to run the project,
 
 ```
 npm start
