@@ -135,7 +135,7 @@ export default function AddnewEmployee() {
         eType: employeeType,
         joinDate: joinedDate,
         experience: experience,
-        salary: salary,
+        Salary: salary,
         personalNotes: personalNote,
       };
       addEmployee(newEmployee);

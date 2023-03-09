@@ -16,6 +16,7 @@ const employeeSchema = new Schema({
   experience: { type: String, required: true },
   salary: { type: String },
   personalNotes: { type: String, required: true },
+  employeId: { type: String },
 });
 
 export const employeeModel = mongoose.model("employees", employeeSchema);
