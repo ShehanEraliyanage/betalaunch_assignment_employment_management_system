@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       colors: {
         fCol: "#00318C",
+        eCol: "#0052EA",
+        dCol: "#C62828",
       },
     },
   },
