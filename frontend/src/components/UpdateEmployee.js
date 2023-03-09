@@ -91,11 +91,7 @@ export default function UpdateEmployee(props) {
     setPersonalNotes(data);
   };
 
-  console.log(displayName);
-
   function handleSubmit(id) {
-    console.log("inside the handle");
-    console.log(displayName);
     Swal.fire({
       title: "Are you sure?",
       text: "Do you want to change Employee details!",

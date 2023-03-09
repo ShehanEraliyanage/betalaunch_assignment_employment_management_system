@@ -42,7 +42,20 @@ export const addEmployee = async (req, res) => {
 };
 
 export const getAllEmployees = async (req, res) => {
-  const employees = await employeeModel.find({});
+  let { page, limit, selectedType } = req.query;
+  let filter = {};
+  if (selectedType !== "null") {
+    filter.eType = selectedType;
+  }
+  if (!page) {
+    page = 1;
+  }
+  if (!limit) {
+    limit = 5;
+  }
+  const size = parseInt(limit);
+  const skip = (page - 1) * size;
+  const employees = await employeeModel.find(filter).limit(limit).skip(skip);
   res.send(employees);
 };
 
@@ -53,9 +66,9 @@ export const getSelectedEmployee = async (req, res) => {
 
 export const updateEmployee = async (req, res) => {
   try {
-    const vehicle = await employeeModel.findOneAndUpdate(
+    const employee = await employeeModel.findOneAndUpdate(
       {
-        _id: req.body.id,
+        _id: req.body._id,
       },
       {
         _id: req.body.id,
@@ -77,15 +90,16 @@ export const updateEmployee = async (req, res) => {
         new: true,
       }
     );
-    if (vehicle) {
+    console.log(employee);
+    if (employee) {
       res.send({
         status: 200,
-        vehicle: vehicle,
+        employee: employee,
       });
     } else {
       res.send({
         status: 500,
-        vehicle: vehicle,
+        employee: employee,
       });
     }
   } catch (error) {
