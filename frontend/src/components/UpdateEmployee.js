@@ -147,7 +147,7 @@ export default function UpdateEmployee(props) {
         <div className="grid md:grid-cols-2 md:gap-6 justify-items-stretch  ">
           <h1 className=" mx-4 mt-4 text-lg font-bold">Update Employee</h1>
           <Link to={"/"}>
-            <h1 className="justify-self-end mx-5 pl-96 ml-80">X</h1>
+            <h1 className="justify-self-end mx-5 pl-96 ml-80 mt-2">X</h1>
           </Link>
         </div>
         <h1 className="mx-4  text-lg font-bold flex justify-center">

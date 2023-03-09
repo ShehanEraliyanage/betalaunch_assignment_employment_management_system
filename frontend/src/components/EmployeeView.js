@@ -145,7 +145,7 @@ export default function EmployeeView() {
           <div>
             {" "}
             <ReactPaginate
-              className="flex flex-row p-3  gap-x-2"
+              className="flex flex-row p-3 gap-x-2"
               breakLabel={"..."}
               pageCount={totalPages}
               onPageChange={handlePageClick}

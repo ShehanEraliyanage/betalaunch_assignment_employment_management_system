@@ -25,6 +25,7 @@ export const addEmployee = async (req, res) => {
       personalNotes: req.body.personalNotes,
       employeId: counter.seq,
     });
+    console.log(req.body.salary);
 
     const details = await employee.save();
 
