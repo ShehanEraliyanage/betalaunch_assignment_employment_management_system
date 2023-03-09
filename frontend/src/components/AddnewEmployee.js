@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import Select from "react-select";
@@ -25,16 +25,16 @@ export default function AddnewEmployee() {
 
   function handleSubmit() {
     if (
-      fullName === "" ||
-      nameWithInitials === "" ||
-      dateOfBirth === "" ||
-      email === "" ||
-      phoneNumber === "" ||
-      designation === "" ||
-      employeeType === "" ||
-      joinedDate === "" ||
-      experience === "" ||
-      salary === "" ||
+      fullName === "" &&
+      nameWithInitials === "" &&
+      dateOfBirth === "" &&
+      email === "" &&
+      phoneNumber === "" &&
+      designation === "" &&
+      employeeType === "" &&
+      joinedDate === "" &&
+      experience === "" &&
+      salary === "" &&
       personalNote === ""
     ) {
       Swal.fire({
@@ -133,7 +133,7 @@ export default function AddnewEmployee() {
         eType: employeeType,
         joinDate: joinedDate,
         experience: experience,
-        Salary: salary,
+        salary: salary,
         personalNotes: personalNote,
       };
       addEmployee(newEmployee);
@@ -155,7 +155,9 @@ export default function AddnewEmployee() {
       <div>
         <div className="grid md:grid-cols-2 md:gap-6 justify-items-stretch  ">
           <h1 className=" mx-4 mt-4 text-lg font-bold">Add People</h1>
-          <h1 className="justify-self-end mx-5">X</h1>
+          <Link to={"/"}>
+            <h1 className="justify-self-end mx-5 pl-96 ml-80 mt-2">X</h1>
+          </Link>
         </div>
         <div className="m-10">
           <form className="bg-white p-6 rounded-lg shadow-lg">
@@ -359,7 +361,9 @@ export default function AddnewEmployee() {
               />
             </div>
             <div className="flex justify-end">
-              <h1 className="mr-5 mt-3 text-fCol">Cancel</h1>
+              <Link to={"/"}>
+                <h1 className="mr-5 mt-3 text-fCol">Cancel</h1>
+              </Link>
               <button
                 type="button"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
