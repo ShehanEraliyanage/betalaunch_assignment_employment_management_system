@@ -70,10 +70,10 @@ export default function EmployeeView() {
   return (
     <>
       <div>
-        <h1>People</h1>
+        <h1 className=" mx-4 mt-4 text-lg font-bold border-b-2 pb-3">People</h1>
       </div>
       <div>
-        <div className="flex justify-end mr-10 -mb-4">
+        <div className="flex justify-end mr-10 -mb-4 mt-3">
           <div className="mr-5">
             <Select
               options={employeeTypes}
