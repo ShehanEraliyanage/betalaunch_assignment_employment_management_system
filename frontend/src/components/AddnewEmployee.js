@@ -6,7 +6,6 @@ import Select from "react-select";
 
 //controllers
 import { addEmployee } from "../controllers/employee";
-import { reactBaseURL } from "../config";
 
 export default function AddnewEmployee() {
   const [fullName, setFullName] = useState("");
