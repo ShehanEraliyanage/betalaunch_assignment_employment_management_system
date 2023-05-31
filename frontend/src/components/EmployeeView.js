@@ -14,6 +14,10 @@ export default function EmployeeView() {
   const [totalPages, setTotalPages] = useState(5);
 
   useEffect(() => {
+    setTotalPages(5);
+  }, []);
+
+  useEffect(() => {
     getAllEmployees(currentPage, selectedType).then((res) => {
       setEmployees(res);
     });
