@@ -11,7 +11,7 @@ import employeeRoutes from "./routes/employee.js";
 // Constants
 dotenv.config();
 const URL = process.env.MONGODB_URL;
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 const app = express();
 
 app.use(cors());
