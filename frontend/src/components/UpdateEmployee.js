@@ -58,7 +58,7 @@ export default function UpdateEmployee(props) {
       setType({ label: res.eType, value: res.eType });
       setExperience({ label: res.experience, value: res.experience });
     });
-  }, []);
+  }, [id]);
 
   const setFullNameHandler = (data) => {
     setFullName(data);
