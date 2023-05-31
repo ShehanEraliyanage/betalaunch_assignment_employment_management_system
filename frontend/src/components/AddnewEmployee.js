@@ -145,7 +145,7 @@ export default function AddnewEmployee() {
         timer: 1500,
       });
       setTimeout(() => {
-        window.location.replace(reactBaseURL + "/");
+        window.location.replace("/");
       }, 1000);
     }
   }
