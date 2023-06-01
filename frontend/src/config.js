@@ -1,2 +1,1 @@
-export const baseURL = "http://localhost:10000";
-export const reactBaseURL = "http://localhost:3000";
+export const baseURL = "https://employee-management-s2i1.onrender.com";

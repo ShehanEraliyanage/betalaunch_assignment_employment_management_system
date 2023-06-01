@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { reactBaseURL } from "../config";
 import Swal from "sweetalert2";
 import Select from "react-select";
 
@@ -126,7 +125,7 @@ export default function UpdateEmployee(props) {
               confirmButtonText: "Ok",
             });
             setTimeout(() => {
-              window.location.replace(reactBaseURL + "/");
+              window.location.replace("/");
             }, 2050);
           } else {
             Swal.fire({
